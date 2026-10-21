@@ -53,6 +53,54 @@ const challenges: Record<string, Challenge[]> = {
     { prompt: 'Boss 2: Process people in the order they arrived. Which structure?', choices: ['Queue', 'Stack', 'Heap'], answer: 0, explanation: 'A queue preserves arrival order with FIFO behavior.' },
     { prompt: 'Boss 3: You need the smallest value repeatedly. Which structure is useful?', choices: ['Min-heap', 'Stack', 'Unsorted queue'], answer: 0, explanation: 'A min-heap gives efficient access to the smallest item.' },
   ],
+  'Linked List Lab': [
+    { prompt: 'A → B → C. Which node does A.next point to?', choices: ['A', 'B', 'C'], answer: 1, explanation: 'Each node points to the next node; A.next is B.' },
+    { prompt: 'To insert X between A and B, which pointer should be set first?', choices: ['X.next = B', 'A.next = B', 'B.next = X'], answer: 0, explanation: 'Point X to B before changing A.next, so the rest of the chain stays connected.' },
+    { prompt: 'What is the time complexity to access the 8th node from the head?', choices: ['O(1)', 'O(log n)', 'O(n)'], answer: 2, explanation: 'A linked list must follow next pointers node by node.' },
+    { prompt: 'In a singly linked list, what marks the end?', choices: ['A null next pointer', 'A pointer to the head', 'An empty value'], answer: 0, explanation: 'The final node points to null.' },
+  ],
+  'Hash Map Heist': [
+    { prompt: 'A map stores student names and grades. What is the name used to retrieve a grade?', choices: ['Key', 'Bucket count', 'Pointer'], answer: 0, explanation: 'The key identifies the value stored in the map.' },
+    { prompt: 'Two different keys map to the same bucket. What happened?', choices: ['A collision', 'A traversal', 'A cache miss'], answer: 0, explanation: 'A hash collision occurs when keys produce the same bucket index.' },
+    { prompt: 'With a good hash function, what is the average lookup time?', choices: ['O(1)', 'O(log n)', 'O(n²)'], answer: 0, explanation: 'Hash maps provide average constant-time lookup.' },
+    { prompt: 'What should a map do when two keys collide?', choices: ['Store both using collision handling', 'Discard one key', 'Sort the keys'], answer: 0, explanation: 'Chaining or probing lets a map keep both entries.' },
+  ],
+  'Heap Keeper': [
+    { prompt: 'In a min-heap, which value is at the root?', choices: ['The smallest', 'The largest', 'The most recently added'], answer: 0, explanation: 'Every parent in a min-heap is no greater than its children.' },
+    { prompt: 'A min-heap root is 2 with children 5 and 4. Is heap order valid?', choices: ['Yes', 'No, children must be smaller', 'No, root must be largest'], answer: 0, explanation: 'The root 2 is smaller than both children.' },
+    { prompt: 'After removing the root, what restores heap order?', choices: ['Move the last item to root, then sift down', 'Reverse the array', 'Run binary search'], answer: 0, explanation: 'Sifting down restores the parent-child ordering.' },
+    { prompt: 'What is the time to remove the minimum from a binary heap?', choices: ['O(1)', 'O(log n)', 'O(n)'], answer: 1, explanation: 'The root is found immediately, then heap order is restored down one tree path.' },
+  ],
+  'Two-Pointer Trek': [
+    { prompt: 'In a sorted array, to find two values summing to 10, where do pointers usually start?', choices: ['At both ends', 'Both at index 0', 'At random positions'], answer: 0, explanation: 'Starting at both ends lets you increase or decrease the sum efficiently.' },
+    { prompt: 'Values are 2 and 9; target is 10. What should the left pointer do?', choices: ['Move right to increase the sum', 'Move left', 'Stop immediately'], answer: 0, explanation: 'The sum is too small, so advance the left pointer to a larger value.' },
+    { prompt: 'Values are 4 and 9; target is 10. What should the right pointer do?', choices: ['Move left to decrease the sum', 'Move right', 'Reset both pointers'], answer: 0, explanation: 'The sum is too large, so move the right pointer to a smaller value.' },
+    { prompt: 'What is the time complexity of this scan?', choices: ['O(n)', 'O(n²)', 'O(log n)'], answer: 0, explanation: 'Each pointer moves across the array at most once.' },
+  ],
+  'Sliding Window Sprint': [
+    { prompt: 'For a fixed-size window of 3, which indices form the first window?', choices: ['0, 1, 2', '0, 1, 2, 3', '1, 2, 3'], answer: 0, explanation: 'A size-3 window starting at index 0 contains indices 0 through 2.' },
+    { prompt: 'When the window moves right by one, what leaves it?', choices: ['The leftmost value', 'The rightmost value', 'The middle value'], answer: 0, explanation: 'The left edge advances, so its old value leaves the window.' },
+    { prompt: 'How can you update a running sum efficiently?', choices: ['Subtract the outgoing value and add the incoming value', 'Re-sum the whole array', 'Divide the sum by the window size'], answer: 0, explanation: 'Only two values change when a fixed-size window shifts.' },
+    { prompt: 'What is the time complexity to check all fixed-size windows this way?', choices: ['O(n)', 'O(n²)', 'O(1)'], answer: 0, explanation: 'Each array element enters and leaves the window at most once.' },
+  ],
+  'Greedy Route Planner': [
+    { prompt: 'A greedy algorithm chooses:', choices: ['The best-looking local choice now', 'Every possible path', 'A random choice each time'], answer: 0, explanation: 'Greedy methods make a locally optimal choice at each step.' },
+    { prompt: 'For activity selection, which activity is often chosen first?', choices: ['The one that finishes earliest', 'The one that starts latest', 'The longest activity'], answer: 0, explanation: 'Finishing earliest leaves the most room for later activities.' },
+    { prompt: 'Does a greedy choice always produce the global optimum for every problem?', choices: ['No', 'Yes', 'Only when input is sorted'], answer: 0, explanation: 'Greedy correctness depends on the problem having the right structure.' },
+    { prompt: 'Which task is a classic greedy example?', choices: ['Selecting non-overlapping activities by finish time', 'Enumerating all permutations', 'Computing every subarray sum from scratch'], answer: 0, explanation: 'Earliest-finish activity selection has a greedy optimal strategy.' },
+  ],
+  'Union-Find Frontier': [
+    { prompt: 'What does find(x) tell you in disjoint-set union?', choices: ['The representative of x’s component', 'The shortest path to x', 'The number of graph edges'], answer: 0, explanation: 'Find returns the root representative for the component containing x.' },
+    { prompt: 'What does union(a, b) do?', choices: ['Combines the components containing a and b', 'Sorts a and b', 'Removes both nodes'], answer: 0, explanation: 'Union merges two sets into one connected component.' },
+    { prompt: 'If find(a) equals find(b), what do you know?', choices: ['They are already connected', 'They have equal values', 'They have no path between them'], answer: 0, explanation: 'Nodes with the same representative belong to the same component.' },
+    { prompt: 'Which optimization flattens paths during find?', choices: ['Path compression', 'Heapify', 'Memo sorting'], answer: 0, explanation: 'Path compression points visited nodes closer to the representative.' },
+  ],
+  'Trie Word Hunt': [
+    { prompt: 'What do nodes along a trie path represent?', choices: ['Characters in a prefix', 'Sorted numeric values', 'Graph edge weights'], answer: 0, explanation: 'Each step follows a character, so a path spells a prefix.' },
+    { prompt: 'Words are “car” and “cat”. What prefix do they share?', choices: ['ca', 'car', 'cat'], answer: 0, explanation: 'Both words begin with c followed by a.' },
+    { prompt: 'How does a trie help test whether a prefix exists?', choices: ['Follow its characters from the root', 'Scan every stored word fully', 'Sort all words again'], answer: 0, explanation: 'A prefix lookup follows one edge per character.' },
+    { prompt: 'What extra marker commonly distinguishes a complete word from just a prefix?', choices: ['End-of-word flag', 'Heap root', 'Null key'], answer: 0, explanation: 'An end-of-word marker records that a stored word finishes at that node.' },
+  ],
 };
 
 export function PlayableGameBoard({ game, onComplete }: { game: string; onComplete: () => void }) {
