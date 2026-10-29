@@ -70,3 +70,6 @@ Use `pnpm install --frozen-lockfile && pnpm build` as the build command and `pnp
 - `GEMINI_API_KEY` is read only in server-side code. Never rename it to `NEXT_PUBLIC_GEMINI_API_KEY`.
 - `.env.local` is ignored by Git; `.env.example` contains placeholders only.
 - Uploaded source files are only sent to Gemini when a user submits a request that includes them. DOCX files are extracted locally on the server before their text is sent; selected PDFs and images are sent as visual inputs.
+
+- https://skilltest-ai.onrender.com
+- 
